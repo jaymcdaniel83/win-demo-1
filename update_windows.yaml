@@ -4,6 +4,6 @@
 
   tasks:
   - name: Install Windows Update
-    ansible.windows.win_shell: './install_update.ps1 -KBNumber {{ KBNumber }}'
+    ansible.windows.win_shell: .\install_update.ps1 -KBNumber {{ KBNumber }} >> C:\Code\install_update\install_update.log
     args:
       chdir: C:\Code\install_update
