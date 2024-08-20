@@ -1,9 +1,11 @@
 - name: Update Windows
   hosts: ansible-win2k19
-  remote_user: administrator
+  remote_user: sa_ansible
 
   tasks:
   - name: Install Windows Update
-    ansible.windows.win_shell: .\install_update.ps1 -KBNumber {{ KBNumber }} >> C:\Code\install_update\install_update.log
+    win_shell: .\install_update.ps1 -KBNumber {{ KBNumber }} > C:\Code\install_update\install_update.log
+    become: yes
+    become_method: runas
     args:
       chdir: C:\Code\install_update
