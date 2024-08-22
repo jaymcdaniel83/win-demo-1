@@ -4,6 +4,11 @@ param(
     [string]$KBNumber
 )
 
+# if not $hostname
+# then
+#  skip
+# endif
+
 # will download the latest updates available
 Write-Host "Getting latest updates available..."
 Get-WindowsUpdate
