@@ -1,0 +1,7 @@
+---
+ansible_host: 192.168.2.204
+ansible_user: sa_ansible
+ansible_port: 22
+ansible_password: "1Password!"
+ansible_become_user: Administrator
+ansible_shell_type: powershell
